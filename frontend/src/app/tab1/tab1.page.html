@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Movie Search</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <ion-icon name="log-out-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="search-page">
+
+  <div class="search-container">
+
+    <div class="hero">
+      <h1>Find your next movie</h1>
+      <p>Search real movies and build your personal watch history.</p>
+    </div>
+
+    <ion-searchbar
+      placeholder="Search by movie title"
+      [(ngModel)]="searchTerm"
+      (keyup.enter)="searchMovies()">
+    </ion-searchbar>
+
+    <ion-button expand="block" class="main-button" (click)="searchMovies()">
+      Search
+    </ion-button>
+
+    <div *ngIf="hasSearched && movies.length === 0" class="empty-state">
+      <ion-icon name="film-outline"></ion-icon>
+      <h2>No movies found</h2>
+      <p>Try searching for another title.</p>
+    </div>
+
+    <ion-list *ngIf="movies.length > 0">
+
+      <ion-card
+        *ngFor="let movie of movies"
+        class="movie-card"
+        (click)="openDetails(movie)">
+
+        <div class="movie-card-content">
+
+          <img
+            [src]="movie.poster && movie.poster !== 'N/A' ? movie.poster : 'assets/no-poster.png'"
+            alt="Movie poster"
+            class="poster" />
+
+          <div class="movie-info">
+            <h2>{{ movie.title }}</h2>
+            <p>{{ movie.year }}</p>
+            <p *ngIf="movie.type">{{ movie.type }}</p>
+          </div>
+
+        </div>
+
+      </ion-card>
+
+    </ion-list>
+
+  </div>
+
+</ion-content>

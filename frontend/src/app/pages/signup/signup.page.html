@@ -1,0 +1,86 @@
+<ion-content class="signup-content">
+
+  <div class="signup-wrapper">
+
+    <div class="brand-section">
+      <h1>Create Account</h1>
+      <p>Start tracking your movies</p>
+    </div>
+
+    <ion-card class="auth-card">
+
+      <ion-card-content>
+
+        <ion-item lines="none" class="input-item">
+          <ion-label position="stacked">Name</ion-label>
+
+          <ion-input
+            type="text"
+            placeholder="Your name"
+            [(ngModel)]="name">
+          </ion-input>
+        </ion-item>
+
+        <ion-item lines="none" class="input-item">
+          <ion-label position="stacked">Email</ion-label>
+
+          <ion-input
+            type="email"
+            placeholder="your@email.com"
+            [(ngModel)]="email">
+          </ion-input>
+        </ion-item>
+
+        <ion-item lines="none" class="input-item password-item">
+          <ion-label position="stacked">Password</ion-label>
+
+          <ion-input
+            [type]="showPassword ? 'text' : 'password'"
+            placeholder="Password"
+            [(ngModel)]="password">
+          </ion-input>
+
+          <ion-button
+            fill="clear"
+            slot="end"
+            class="eye-button"
+            type="button"
+            (click)="togglePasswordVisibility()">
+            <ion-icon [name]="showPassword ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
+          </ion-button>
+        </ion-item>
+
+        <ion-item lines="none" class="input-item password-item">
+          <ion-label position="stacked">Confirm Password</ion-label>
+
+          <ion-input
+            [type]="showConfirmPassword ? 'text' : 'password'"
+            placeholder="Confirm password"
+            [(ngModel)]="confirmPassword">
+          </ion-input>
+
+          <ion-button
+            fill="clear"
+            slot="end"
+            class="eye-button"
+            type="button"
+            (click)="toggleConfirmPasswordVisibility()">
+            <ion-icon [name]="showConfirmPassword ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
+          </ion-button>
+        </ion-item>
+
+        <ion-button expand="block" class="main-button" (click)="signup()">
+          Sign up
+        </ion-button>
+
+        <ion-button fill="clear" expand="block" class="link-button" (click)="goToLogin()">
+          Already have an account? Log in
+        </ion-button>
+
+      </ion-card-content>
+
+    </ion-card>
+
+  </div>
+
+</ion-content>

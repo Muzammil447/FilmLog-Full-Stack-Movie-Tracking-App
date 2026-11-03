@@ -1,0 +1,57 @@
+<ion-content class="login-content">
+
+  <div class="login-wrapper">
+
+    <div class="brand-section">
+      <h1>FilmLog</h1>
+      <p>Track your movie journey</p>
+    </div>
+
+    <ion-card class="auth-card">
+
+      <ion-card-content>
+
+        <ion-item lines="none" class="input-item">
+          <ion-label position="stacked">Email</ion-label>
+
+          <ion-input
+            type="email"
+            placeholder="your@email.com"
+            [(ngModel)]="email">
+          </ion-input>
+        </ion-item>
+
+        <ion-item lines="none" class="input-item password-item">
+          <ion-label position="stacked">Password</ion-label>
+
+          <ion-input
+            [type]="showPassword ? 'text' : 'password'"
+            placeholder="Password"
+            [(ngModel)]="password">
+          </ion-input>
+
+          <ion-button
+            fill="clear"
+            slot="end"
+            class="eye-button"
+            type="button"
+            (click)="togglePasswordVisibility()">
+            <ion-icon [name]="showPassword ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
+          </ion-button>
+        </ion-item>
+
+        <ion-button expand="block" class="main-button" (click)="login()">
+          Log in
+        </ion-button>
+
+        <ion-button fill="clear" expand="block" class="link-button" (click)="goToSignup()">
+          Don’t have an account? Sign up
+        </ion-button>
+
+      </ion-card-content>
+
+    </ion-card>
+
+  </div>
+
+</ion-content>

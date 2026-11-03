@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Stats</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="stats-content">
+
+  <div class="page-heading">
+    <h1>Statistics Dashboard</h1>
+    <p>View insights from your watched movies.</p>
+  </div>
+
+  <div *ngIf="!stats || stats.totalWatchedMovies === 0" class="empty-state">
+    <ion-icon name="bar-chart-outline"></ion-icon>
+    <h2>No statistics yet</h2>
+    <p>Mark movies as watched to generate your dashboard.</p>
+  </div>
+
+  <div *ngIf="stats && stats.totalWatchedMovies > 0">
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-card class="summary-card">
+            <ion-card-content>
+              <h2>{{ stats.totalWatchedMovies }}</h2>
+              <p>Total Movies Watched</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+        <ion-col size="6">
+          <ion-card class="summary-card">
+            <ion-card-content>
+              <h2>{{ stats.totalTimesWatched }}</h2>
+              <p>Total Times Watched</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-card class="chart-card">
+      <ion-card-header>
+        <ion-card-title>Top Genres</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <canvas id="genreChart"></canvas>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="chart-card">
+      <ion-card-header>
+        <ion-card-title>Times Watched Per Movie</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <canvas id="watchedChart"></canvas>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="table-card">
+      <ion-card-header>
+        <ion-card-title>Watched Movies Table</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+
+        <ion-grid class="stats-table">
+
+          <ion-row class="table-header">
+            <ion-col size="4">Title</ion-col>
+            <ion-col size="2">Year</ion-col>
+            <ion-col size="4">Genre</ion-col>
+            <ion-col size="2">Times</ion-col>
+          </ion-row>
+
+          <ion-row *ngFor="let movie of stats.watchedMovieTable">
+            <ion-col size="4">{{ movie.title }}</ion-col>
+            <ion-col size="2">{{ movie.year }}</ion-col>
+            <ion-col size="4">{{ movie.genre }}</ion-col>
+            <ion-col size="2">{{ movie.timesWatched }}</ion-col>
+          </ion-row>
+
+        </ion-grid>
+
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
+</ion-content>

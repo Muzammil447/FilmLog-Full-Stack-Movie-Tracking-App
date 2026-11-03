@@ -1,0 +1,18 @@
+// For information on how to create your own theme, please refer to:
+// https://ionicframework.com/docs/theming/
+
+ion-tab-bar {
+  --background: #050505;
+  --color: #777777;
+  --color-selected: #ffffff;
+  border-top: 1px solid #1f1f1f;
+}
+
+ion-toolbar {
+  --background: #050505;
+  --color: #ffffff;
+}
+
+ion-content {
+  font-family: Arial, Helvetica, sans-serif;
+}

@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Watchlist</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="watchlist-page">
+
+  <div class="page-heading" *ngIf="watchlist.length > 0">
+    <h1>Your Watchlist</h1>
+    <p>{{ watchlist.length }} movie(s) saved for later</p>
+  </div>
+
+  <div *ngIf="watchlist.length === 0" class="empty-state">
+    <ion-icon name="bookmark-outline"></ion-icon>
+    <h2>Your Watchlist is empty</h2>
+    <p>Add movies from the Search page to see them here.</p>
+  </div>
+
+  <ion-list *ngIf="watchlist.length > 0">
+
+    <ion-card *ngFor="let movie of watchlist" class="movie-card">
+
+      <div class="movie-card-content">
+
+        <img
+          [src]="movie.poster && movie.poster !== 'N/A' ? movie.poster : 'assets/no-poster.png'"
+          alt="Movie poster"
+          class="poster" />
+
+        <div class="movie-info">
+          <h2>{{ movie.title }}</h2>
+          <p>{{ movie.year }}</p>
+          <p>{{ movie.genre || 'Genre not available' }}</p>
+          <p>{{ movie.actors || 'Cast not available' }}</p>
+        </div>
+
+      </div>
+
+      <div class="button-row">
+
+        <ion-button
+          expand="block"
+          color="success"
+          (click)="markAsWatched(movie)">
+          <ion-icon name="checkmark-outline" slot="start"></ion-icon>
+          Mark as Watched
+        </ion-button>
+
+        <ion-button
+          expand="block"
+          color="danger"
+          (click)="removeFromWatchlist(movie)">
+          <ion-icon name="trash-outline" slot="start"></ion-icon>
+          Remove
+        </ion-button>
+
+      </div>
+
+    </ion-card>
+
+  </ion-list>
+
+</ion-content>

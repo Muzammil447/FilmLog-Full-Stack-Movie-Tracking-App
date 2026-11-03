@@ -1,0 +1,6 @@
+@u23641178_HW03_BackEnd_HostAddress = http://localhost:5141
+
+GET {{u23641178_HW03_BackEnd_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

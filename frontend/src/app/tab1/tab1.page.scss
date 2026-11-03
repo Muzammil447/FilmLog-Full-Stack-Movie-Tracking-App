@@ -1,0 +1,91 @@
+.search-page {
+  --background: #070707;
+  color: #ffffff;
+}
+
+.search-container {
+  padding: 20px;
+  padding-bottom: 95px;
+}
+
+.hero {
+  margin-bottom: 22px;
+  padding: 22px;
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(229, 9, 20, 0.22), rgba(255, 255, 255, 0.04)),
+    #151515;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  h1 {
+    margin: 0 0 8px;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 900;
+  }
+
+  p {
+    margin: 0;
+    color: #bdbdbd;
+    font-size: 15px;
+  }
+}
+
+ion-searchbar {
+  --background: #171717;
+  --color: #ffffff;
+  --placeholder-color: #9f9f9f;
+  --icon-color: #e50914;
+  --clear-button-color: #ffffff;
+  --border-radius: 16px;
+  padding: 0;
+  margin-bottom: 14px;
+}
+
+.main-button {
+  margin-bottom: 18px;
+}
+
+ion-list {
+  background: transparent;
+}
+
+.movie-card {
+  margin: 0 0 16px;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #151515;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35);
+}
+
+.movie-card-content {
+  display: grid;
+  grid-template-columns: 115px 1fr;
+  gap: 16px;
+  padding: 14px;
+  align-items: center;
+}
+
+.poster {
+  width: 115px;
+  height: 165px;
+  object-fit: cover;
+  border-radius: 16px;
+  background: #222;
+}
+
+.movie-info {
+  h2 {
+    margin: 0 0 8px;
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: 900;
+  }
+
+  p {
+    margin: 4px 0;
+    color: #bcbcbc;
+    text-transform: capitalize;
+  }
+}

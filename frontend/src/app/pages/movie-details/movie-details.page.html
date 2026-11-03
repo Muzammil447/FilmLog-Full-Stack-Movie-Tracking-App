@@ -1,0 +1,65 @@
+<ion-content class="details-content" *ngIf="movie">
+
+  <div class="poster-section">
+
+    <img
+      [src]="movie.poster && movie.poster !== 'N/A' ? movie.poster : 'assets/no-poster.png'"
+      class="hero-poster">
+
+    <ion-button fill="clear" class="back-button" (click)="goBack()">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+
+    <div class="gradient"></div>
+
+  </div>
+
+  <div class="details-area">
+
+    <h1>{{ movie.title }}</h1>
+
+    <p class="year">
+      {{ movie.year }}
+      <span *ngIf="movie.type"> • {{ movie.type }}</span>
+    </p>
+
+    <div class="info-box" *ngIf="movie.genre">
+      <h3>Genre</h3>
+      <p>{{ movie.genre }}</p>
+    </div>
+
+    <div class="info-box">
+      <h3>Cast</h3>
+      <p>{{ movie.actors || 'Cast not available' }}</p>
+    </div>
+
+    <div class="info-box" *ngIf="movie.plot">
+      <h3>Plot</h3>
+      <p>{{ movie.plot }}</p>
+    </div>
+
+    <div class="button-area">
+
+      <ion-button
+        expand="block"
+        class="dark-button"
+        [disabled]="isInWatchlist || isInWatchedList"
+        (click)="addToWatchlist()">
+        <ion-icon name="add-outline" slot="start"></ion-icon>
+        Add to Watchlist
+      </ion-button>
+
+      <ion-button
+        expand="block"
+        class="light-button"
+        [disabled]="isInWatchedList"
+        (click)="markAsWatched()">
+        <ion-icon name="checkmark-outline" slot="start"></ion-icon>
+        Mark as Watched
+      </ion-button>
+
+    </div>
+
+  </div>
+
+</ion-content>

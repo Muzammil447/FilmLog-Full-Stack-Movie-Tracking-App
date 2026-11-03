@@ -1,0 +1,122 @@
+.watched-content {
+  --background: #070707;
+  color: #ffffff;
+}
+
+.page-heading {
+  padding: 24px 22px 6px;
+
+  h1 {
+    margin: 0 0 6px;
+    font-size: 32px;
+    font-weight: 900;
+    color: #ffffff;
+  }
+
+  p {
+    margin: 0;
+    color: #a7a7a7;
+  }
+}
+
+.empty-state {
+  text-align: center;
+  padding: 80px 24px;
+  color: #a7a7a7;
+
+  ion-icon {
+    font-size: 64px;
+    color: #e50914;
+    margin-bottom: 14px;
+  }
+
+  h2 {
+    color: #ffffff;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+
+  p {
+    color: #a7a7a7;
+    margin: 0;
+  }
+}
+
+ion-grid {
+  padding: 16px 20px 100px;
+}
+
+.movie-card {
+  margin: 0 0 18px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #151515;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35);
+}
+
+.poster-wrapper {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  background: #000;
+}
+
+.poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.82);
+}
+
+.counter {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #e50914, #9b050c);
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+}
+
+ion-card-content {
+  padding: 18px;
+
+  h2 {
+    margin: 0 0 8px;
+    color: #ffffff;
+    font-size: 23px;
+    font-weight: 900;
+  }
+
+  p {
+    margin: 5px 0;
+    color: #bdbdbd;
+  }
+}
+
+ion-card-content ion-button {
+  margin-top: 10px;
+  height: 43px;
+  --border-radius: 14px;
+  font-weight: 800;
+}
+
+ion-card-content ion-button[color="success"] {
+  --background: linear-gradient(135deg, #e50914, #9b050c);
+  --color: #ffffff;
+}
+
+ion-card-content ion-button:not([color]) {
+  --background: #ffffff;
+  --color: #111111;
+}
+
+ion-card-content ion-button[color="danger"] {
+  --background: #2a2a2a;
+  --color: #ffffff;
+  --border-color: rgba(255, 255, 255, 0.12);
+}
